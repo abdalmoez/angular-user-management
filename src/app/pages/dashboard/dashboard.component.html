@@ -1,0 +1,32 @@
+<div class="table-wrapper">
+    <div class="table-title">
+        <div class="row">
+            <div class="col-sm-8"><h2>Users <b>Details</b></h2></div>
+            <div class="col-sm-4">
+                <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+            </div>
+        </div>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Family name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.name}}</td>
+                <td>{{user.familyname | upperstr}}</td>
+                <td>{{user.email}}</td>
+                <td>
+                    <button (click)="display(user)"  class="btn mr-3"><i class="material-icons"></i></button>
+                    <button (click)="edit(user)"  class="btn mr-3"><i class="material-icons"></i></button>
+                    <button (click)="delete(user)"  class="btn"><i class="material-icons"></i></button>
+                </td>
+            </tr>    
+        </tbody>
+    </table>
+</div>
